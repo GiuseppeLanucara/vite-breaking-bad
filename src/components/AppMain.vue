@@ -7,7 +7,7 @@ export default {
 
 <template>
     <div class="container mt-5">
-        <div class="results d-flex align-items-center">
+        <div class="results d-flex align-items-center ">
             <h2 class="">Found 62 characters</h2>
         </div>
     </div>
