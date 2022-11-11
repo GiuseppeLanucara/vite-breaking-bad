@@ -1,6 +1,11 @@
 <script>
 export default {
-    name: "AppHeader"
+    name: "AppHeader",
+    data() {
+        return {
+            seriesFilter: ["Breaking Bad", "Better Call Saul"]
+        }
+    }
 }
 </script>
 
@@ -11,16 +16,13 @@ export default {
     </div>
     <div class="container">
         <nav>
-            <div class="dropdown">
-                <button class="mt-5 btn ms-color dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Select Category
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+            <div class="form-floating lbl mt-4 mb-5 dp-flex justify-content-center">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected>Select a Category</option>
+                    <option v-for="(serie, index) in seriesFilter" :value="serie" :key="index">{{ serie }}</option>
+
+                </select>
+                <label for="floatingSelect"></label>
             </div>
         </nav>
     </div>
@@ -44,5 +46,9 @@ h1 {
 
 img {
     max-width: 50px;
+}
+
+.lbl {
+    width: 20%;
 }
 </style>
