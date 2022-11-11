@@ -16,16 +16,20 @@ export default {
     }
   },
   created() {
-    this.store.loading = true
-    axios.get("https://www.breakingbadapi.com/api/characters").then((resp) => {
-      this.store.characters = resp.data;
-      console.log(this.store.characters);
-      this.store.loading = false
-    })
+    this.getSeries()
   },
   methods: {
     getSeries() {
-
+      this.store.loading = true
+      let apiUrl = "https://www.breakingbadapi.com/api/characters"
+      if (this.store.getSeries) {
+        apiUrl += "?category=Better+Call+Saul";
+      }
+      axios.get("https://www.breakingbadapi.com/api/characters?category=Better+Call+Saul").then((resp) => {
+        this.store.characters = resp.data.results;
+        console.log(this.store.characters);
+        this.store.loading = false
+      })
     }
   }
 }

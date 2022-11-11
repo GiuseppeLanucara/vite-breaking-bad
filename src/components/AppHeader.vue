@@ -23,10 +23,10 @@ export default {
                     v-model="store.seriesStatus">
                     <option selected>Select a Category</option>
                     <option v-for="(serie, index) in seriesFilter" :value="serie" :key="index">{{ serie }}</option>
-
                 </select>
                 <label for="floatingSelect"></label>
             </div>
+            <button type="button" class="btn btn-primary" @click="$emit("")">Primary</button>
         </nav>
     </div>
 
