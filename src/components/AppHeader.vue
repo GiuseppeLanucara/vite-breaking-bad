@@ -26,7 +26,7 @@ export default {
                 </select>
                 <label for="floatingSelect"></label>
             </div>
-            <button type="button" class="btn btn-primary" @click="$emit("")">Primary</button>
+            <button type="button" class="btn btn-primary" @click="$emit('filterSerie')">Primary</button>
         </nav>
     </div>
 

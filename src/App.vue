@@ -36,7 +36,7 @@ export default {
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader @filterSerie="getSeries()" />
   <AppLoading v-if="store.loading" />
   <AppMain v-else />
 </template>
