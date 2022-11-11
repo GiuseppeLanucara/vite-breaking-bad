@@ -22,6 +22,11 @@ export default {
       console.log(this.store.characters);
       this.store.loading = false
     })
+  },
+  methods: {
+    getSeries() {
+
+    }
   }
 }
 </script>

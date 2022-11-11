@@ -1,8 +1,10 @@
 <script>
+import { store } from "../store";
 export default {
     name: "AppHeader",
     data() {
         return {
+            store,
             seriesFilter: ["Breaking Bad", "Better Call Saul"]
         }
     }
@@ -17,7 +19,8 @@ export default {
     <div class="container">
         <nav>
             <div class="form-floating lbl mt-4 mb-5 dp-flex justify-content-center">
-                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                <select class="form-select" id="floatingSelect" aria-label="Floating label select example"
+                    v-model="store.seriesStatus">
                     <option selected>Select a Category</option>
                     <option v-for="(serie, index) in seriesFilter" :value="serie" :key="index">{{ serie }}</option>
 
